@@ -7,7 +7,7 @@
 
 \author{
 	Guilherme Schützer - NUSP 8658544 \\
-	Tomás Paim         - NUSP
+	Tomás Paim         - NUSP 7157602
 }
 
 \date{17/05/2015}
@@ -16,6 +16,6 @@
 \maketitle
 
 \section{1. Algoritmo ingênuo}
-Com as informações recebidas de argumento na função \texttt{simplex}, precisamos da matriz $B$ e seus índices $B(1)...B(m)$
+Com as informações recebidas de argumento na função \texttt{simplex}, precisamos da matriz $B$ e seus índices $B(1)...B(m)$. Para tanto, um loop pela solução básica fornecida é suficiente, pois já identificamos os índices que correspondem a um valor não-nulo e criamos a matriz $B$ ao mesmo tempo. Na linguagem, é fácil retirar colunas da matriz, portanto $B$ é facilmente criada ao eliminarmos de $A$ as colunas correspondentes aos índices não-básicos de $x$.
 
 \end{document}
