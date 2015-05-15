@@ -18,4 +18,7 @@
 \section{1. Algoritmo ingênuo}
 Com as informações recebidas de argumento na função \texttt{simplex}, precisamos da matriz $B$ e seus índices $B(1)...B(m)$. Para tanto, um loop pela solução básica fornecida é suficiente, pois já identificamos os índices que correspondem a um valor não-nulo e criamos a matriz $B$ ao mesmo tempo. Na linguagem, é fácil retirar colunas da matriz, portanto $B$ é facilmente criada ao eliminarmos de $A$ as colunas correspondentes aos índices não-básicos de $x$.
 
+A partir dos argumentos da função \texttt{simplex}, começamos a primeira iteração do algoritmo copiando a matriz $A$ para a $B$ e em seguida varremos o vetor $x$ de trás para frente, para evitar que ao eliminar colunas de $B$ acabemos acessando a posição errada na próxima iteração desse loop, e, para cada elemento $i$, adicionamos ao vetor \texttt{bind} seu índice caso o valor de $x_{i}$ seja diferente de zero (o que implica que aquela é uma variável não-básica). Caso contrário, eliminamos a coluna $i$ da matriz $B$, pois a variável $i$ é uma das variáveis básicas, já que não há soluções básicas degeneradas. Em seguida, invertemos o vetor \texttt{bind} para que ele esteja de acordo com $x$.
+No próximo passo do algoritmo devemos calcular os custos reduzidos associados a cada uma das variáveis não-básicas. Para isso, usaremos a fórmula \begin{math}\bar{c}_{j} = c_{j} - c'_{B}B^-1A_{j}\end{math}
+
 \end{document}
