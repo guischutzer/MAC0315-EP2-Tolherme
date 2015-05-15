@@ -20,12 +20,7 @@
 Para realizar este exercício, passamos a tratar todos os vetores que vimos em aula como vetores colunas como vetores linha para que o Octave realizasse as operações com naturalidade. Por este motivo, sempre que mencionarmos, por exemplo $c'x$ estamos implementando $cx'$.
 
 \section{1. Algoritmo ingênuo}
-<<<<<<< HEAD
-=======
-Com as informações recebidas de argumento na função \texttt{simplex}, precisamos da matriz $B$ e seus índices $B(1)...B(m)$. Para tanto, um loop pela solução básica fornecida é suficiente, pois já identificamos os índices que correspondem a um valor não-nulo e criamos a matriz $B$ ao mesmo tempo. Na linguagem, é fácil retirar colunas da matriz, portanto $B$ é facilmente criada ao eliminarmos de $A$ as colunas correspondentes aos índices não-básicos de $x$. $x_{asas}$
 
-$\bar{c_{j}} \bar{c}_{j}$
->>>>>>> 55d8ac01ff368efb1fd32f11142976afc20073b5
 
 A partir dos argumentos da função \texttt{simplex}, começamos a primeira iteração do algoritmo copiando a matriz $A$ para a $B$ e em seguida varremos o vetor $x$ de trás para frente, para evitar que ao eliminar colunas de $B$ acabemos acessando a posição errada na próxima iteração desse loop, e, para cada elemento $i$, adicionamos ao vetor \texttt{bind} seu índice caso o valor de $x_{i}$ seja diferente de zero (o que implica que aquela é uma variável básica), e ao mesmo tempo construímos o vetor \texttt{cB}, que representa os custos associados às variáveis básicas. Caso contrário, eliminamos a coluna $i$ da matriz $B$, pois a variável $i$ é uma das variáveis não-básicas, já que não há soluções básicas degeneradas. Em seguida, invertemos os vetores \texttt{bind} e \texttt{cB} para que eles estejam de acordo com $x$.
 No próximo passo do algoritmo devemos calcular os custos reduzidos associados a cada uma das variáveis não-básicas. Para isso, usaremos a fórmula \begin{math}\bar{c}_{j} = c_{j} - c'_{B}B^-1A_{j}\end{math}.
