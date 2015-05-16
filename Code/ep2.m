@@ -142,18 +142,16 @@ function [ind, v] = simplex_rec(A, b, c, m, n, x, B, bind, cB, it)
     
   printf("\nEntra na base: %d\n\n", l);
   
-  printf("Direcao:\n");
-  for i = 1:n
-    if i == bind
-      printf("%d %.5f \n", bind(i), d(i));
-    endif
+  printf("Direção:\n");
+  for i = 1:m
+    printf("%d %.5f \n", bind(i), -u(i));
   endfor
     
   printf("\nTheta*\n%.5f\n\n", startheta);
     
   printf("Sai da base: %d\n", bind(imin));
     
-  
+  # Atualização: novos B, x, cB, bind
   B(:, imin) = A(:, l);
   
   for i = 1:m
