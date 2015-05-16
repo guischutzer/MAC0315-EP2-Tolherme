@@ -1,4 +1,14 @@
 
+A = [1 1 2 1 0 0 0;
+     0 1 6 0 1 0 0;
+     1 0 0 0 0 1 0;
+     0 1 0 0 0 0 1];
+b = [8 12 4 6];
+c = [10 20 30 40 50 60 70];
+m = 4;
+n = 7;
+x = [0 0 0 8 12 4 6];
+
 # função-invólucro da recursão:
 # calcula dados que só precisam ser
 # mudados a cada iteração
@@ -161,16 +171,5 @@ function [ind, v] = simplex_rec(A, b, c, m, n, x, B, bind, cB, it)
   
 
 endfunction
-
-
-A = [1 1 2 1 0 0 0;
-     0 1 6 0 1 0 0;
-     1 0 0 0 0 1 0;
-     0 1 0 0 0 0 1];
-b = [8 12 4 6];
-c = [10 20 30 40 50 60 70];
-m = 4;
-n = 7;
-x = [0 0 0 8 12 4 6];
 
 [ind v] = simplex(A, b, c, m, n, x);
