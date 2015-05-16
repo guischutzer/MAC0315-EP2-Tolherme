@@ -116,7 +116,7 @@ function [ind, v] = simplex_rec(A, b, c, m, n, x, B, bind, cB, it)
   if l == 0
     ind = 0;
     v = transpose(x);
-    printf("\n=====================================\nSolucao otima encontrada com custo %.5f:\n", c*transpose(x));
+    printf("\n=====================================\nSolução ótima encontrada com custo %.5f:\n", c*transpose(x));
     for i = 1:n
       printf("%d %.5f\n", i, x(i))
     endfor
