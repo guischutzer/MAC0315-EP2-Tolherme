@@ -1,13 +1,10 @@
 
-A = [1 1 2 1 0 0 0;
-     0 1 6 0 1 0 0;
-     1 0 0 0 0 1 0;
-     0 1 0 0 0 0 1];
-b = [8 12 4 6];
-c = [10 20 30 40 50 60 70];
-m = 4;
-n = 7;
-x = [0 0 0 8 12 4 6];
+A = ("Matriz A de restrições: ");
+b = ("Vetor b: ");
+c = ("Vetor de custos c: ");
+m = ("Número de restricões m: ");
+n = ("Número de variáveis n: ");
+x = ("Solução básica inicial: ");
 
 # função-invólucro da recursão:
 # calcula dados que só precisam ser
@@ -98,13 +95,13 @@ function [ind, v] = simplex_rec(A, b, c, m, n, x, B, bind, cB, it)
   # Impressão dos resultados da iteração
   
   printf("\n-------------------------------------\nIterando %d\n\n", it);
-  printf("Variáveis Básicas:\n");
+  printf("Variaveis Basicas:\n");
   
   for i = sort(bind)
     printf("%d %.5f \n", i, x(i));
   endfor      
     
-  printf("\nValor função objetivo: %.5f\n\n", c*transpose(x));
+  printf("\nValor funcao objetivo: %.5f\n\n", c*transpose(x));
    
   printf("Custos reduzidos:\n")
   for i = 1:n
