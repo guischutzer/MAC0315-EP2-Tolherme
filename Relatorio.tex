@@ -24,11 +24,19 @@ $ unzip EP2-7157602-8658544.zip
 $ cd EP2-7157602-8658544/Code
 $ octave
 ...
-octave:1> ep2 # com teste
+# Inicialização dos parâmetros da função
+octave:1> A = (matriz), b = (vetor), c = (valor),
+		          m =  (valor), n = (valor), x = (vetor)
+
+# Chamada da função (parâmetros podem ser escritos diretamente também)
+octave:2> [ind v] = simplex(A, b, c, m, n, x)
+
+# Ou, simplesmente
+octave:3> simplex(A, b, c, m, n, x)
 
 \end{verbatim}
 
-A saída é do formato especificado no enunciado (mais detalhes na seção 3).
+Os vetores podem ser declarados como vetor-linha ou vetor-coluna. A saída é do formato especificado no enunciado (mais detalhes na seção 3).
 
 \section{Comentários Iniciais}
 
@@ -46,7 +54,7 @@ Em seguida, imprimimos as variáveis básicas, valor da função objetivo e os c
 Caso não tenhamos chegado no final da recursão continuaremos a imprimir os dados relativos à iteração atual, que são a variável que entra na base, as coordenadas básicas da direção $d$ relativa à variável $l$, $\theta^*$ e a variável que sai da base. Então atualizamos as variáveis que serão mandadas para o próximo passo da recursão: atualizamos o vetor $x$ com o quando ``andamos'' na direção $d$ (ou seja, para cada variável básica $i$, fazemos $x_{B(i)} = x_{B(i)} +\theta^*d_{(B(i)}$) e mudamos $x_{l}$ para $\theta^*$), atualizamos também o vetor \texttt{bind} com a variável que entra na base substituindo a variável que sai, substituimos a coluna associada à variável que saiu da base em $B$ por $A_{j}$, substituimos a componente associada à variável que saiu por $c[l]$ em $c_{B}$ e atualizamos o contador de iterações.\paragraph{}
 Por fim, chamamos a função recursiva novamente, com os dados atualizados.
 
-\subsection{Exemplos}
+\section{Exemplos}
 
 \paragraph{}
 O exemplo presente e
